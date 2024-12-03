@@ -45,4 +45,10 @@ public class UserController {
     deleteUser(@PathVariable String id) { userService.deleteUser(id);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    @DeleteMapping(path = "/ids/{ids}")
+    public ResponseEntity<Object>
+    deleteUserByIds(@PathVariable String ids) {
+        userService.deleteUser(ids);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
